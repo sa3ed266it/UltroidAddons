@@ -101,7 +101,7 @@ async def speec_(e):
         text = reco.recognize_google(audio, language="ar-AR")
     except Exception as er:
         return await e.eor(str(er))
-    out = "**Extracted Text :**\n `" + text + "`"
+    out = text
     await e.eor(out)
     os.remove(fn)
     os.remove(re)
