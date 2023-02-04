@@ -98,7 +98,7 @@ async def speec_(e):
     with sr.AudioFile(fn) as source:
         audio = reco.record(source)
     try:
-        text = reco.recognize_google(audio, language="en-IN")
+        text = reco.recognize_google(audio, language="ar-AR")
     except Exception as er:
         return await e.eor(str(er))
     out = "**Extracted Text :**\n `" + text + "`"
