@@ -92,6 +92,7 @@ async def speec_(e):
     if not (reply and reply.media):
         return await eod(e, "`Reply to Audio-File..`")
     # Not Hard Checking File Types
+    ok = await ult.eor("`Processing...`")
     re = await reply.download_media()
     fn = re + ".wav"
     await bash(f'ffmpeg -i "{re}" -vn "{fn}"')
@@ -102,6 +103,6 @@ async def speec_(e):
     except Exception as er:
         return await e.eor(str(er))
     out = text
-    await e.eor(out)
+    await ok.eor(out)
     os.remove(fn)
     os.remove(re)
